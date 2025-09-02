@@ -9,7 +9,7 @@ import jakarta.ws.rs.Path;
 import jakarta.ws.rs.PathParam;
 
 @Path("/customers")
-@RegisterRestClient
+@RegisterRestClient(configKey="customer-api")
 @ApplicationScoped
 public interface CustomerClient {
     @GET
