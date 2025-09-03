@@ -30,6 +30,18 @@ services:
     networks:
       - docker-db-test
 
+  keycloak:
+    image: quay.io/keycloak/keycloak:25.0.2
+    container_name: keycloak
+    command: start-dev
+    environment:
+      - KEYCLOAK_ADMIN=admin
+      - KEYCLOAK_ADMIN_PASSWORD=admin
+    ports:
+      - 8080:8080
+    networks:
+      - docker-db-test
+
 networks:
   docker-db-test:
     external: true
